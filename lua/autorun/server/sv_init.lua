@@ -1,6 +1,7 @@
 -- Central Database Service
-
 CentralDatabase = CentralDatabase or { }
+
+CentralDatabase.Mode = "tmysql4"
 
 include('database/sv_config.lua')
 

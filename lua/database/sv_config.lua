@@ -1,4 +1,3 @@
-
 -- Pool Example
 DatabasePool.new(
 	"demoPool", 	-- Name of Pool (for Internal Usage)
@@ -8,5 +7,3 @@ DatabasePool.new(
 	"password", 	-- Password for Authentication
 	"demodb"		-- Database Name
 )
-
-CentralDatabase.Mode = "tmysql4" -- Connection Mode (can be tmysql4 or mysqloo)

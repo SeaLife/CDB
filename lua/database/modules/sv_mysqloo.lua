@@ -23,7 +23,7 @@ DatabasePool = { }
 DatabasePool.__index = DatabasePool
 
 function DatabasePool.new(poolName, host, port, user, pass, db, typ)
-	if typ == nil then typ = "tmysql4" end
+	if typ == nil then typ = "mysqloo" end
 	if CentralDatabase.Pools[ poolName ] ~= nil then return nil end
 
 	local pool = { }
