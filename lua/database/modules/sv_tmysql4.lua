@@ -28,7 +28,13 @@ function DatabasePool.new(poolName, host, port, user, pass, db)
 	local pool = { }
 	setmetatable(pool, DatabasePool)
 
-	local connection = tmysql.Create( host, user, pass, db, port, nil, CLIENT_MULTI_STATEMENTS )
+	local connection, err = tmysql.initialize( host, user, pass, db, port, nil, CLIENT_MULTI_STATEMENTS )
+	--local connection = tmysql.Create( host, user, pass, db, port, nil, CLIENT_MULTI_STATEMENTS )
+
+	if err ~= nil then
+		print("[Central Database Error :: " .. poolName .. "]: " .. err)
+		return
+	end
 
 	pool.host 		= host
 	pool.port 		= port
