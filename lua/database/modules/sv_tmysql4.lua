@@ -69,11 +69,13 @@ function DatabasePool:GetConnection()
 end
 
 function DatabasePool:Connect()
-	local success, err = self.connection:Connect()
+	if not self.connection:IsConnected() then
+		local success, err = self.connection:Connect()
 
-	if not success then
-		self:onConnectionFailed(err)
-		return
+		if not success then
+			self:onConnectionFailed(err)
+			return
+		end
 	end
 
 	self:onConnected()
