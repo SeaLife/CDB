@@ -24,7 +24,7 @@ DatabasePool.new(
 
 ## How to get a Database Pool
 | Function | Arguments | Returns |
-|----------|-----------|---------|
+|-----------|--------|--------|
 | CentralDatabase.GetPool | string poolName | returns the pool object for poolName |
 
 ```
